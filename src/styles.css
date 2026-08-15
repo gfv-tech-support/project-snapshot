@@ -137,10 +137,16 @@
   --sidebar-ring: oklch(0.7665 0.1387 91.06 / 60%);
 }
 
+/* Inherit the parent's radius (used by scroll-area viewports). */
+@utility rounded-inherit {
+  border-radius: inherit;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
   }
+
 
   html {
     color-scheme: dark;
