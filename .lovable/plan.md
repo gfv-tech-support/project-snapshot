@@ -2,6 +2,12 @@
 
 Establish the GFV dark-first design token system (color, typography, radius) and wire it into the existing shadcn/ui components. No navbar, hero, sections, or landing content in this step.
 
+## Project-wide rules (enforced from now on)
+
+- No hard-coded colors in components or page styles — only semantic theme tokens. A genuinely new color is added to the theme with a semantic name first, then used via that token.
+- No hard-coded or arbitrary radius values — only the semantic radius tokens. A genuinely new radius is added to the radius system first.
+
+
 ## 1. Color tokens
 
 Convert the GFV palette to oklch and set it as the single theme in `src/styles.css`. GFV is dark-first, so the dark values become the default (`:root`), and the app shell renders in dark mode.
