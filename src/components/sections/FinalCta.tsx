@@ -1,0 +1,20 @@
+import { StoreButtons } from "@/components/sections/StoreButtons";
+
+/** Final centered conversion banner. */
+export function FinalCta() {
+  return (
+    <section className="border-t border-border bg-card/30">
+      <div className="mx-auto flex w-full max-w-3xl flex-col items-center px-4 py-16 text-center sm:px-6 sm:py-24">
+        <h2 className="font-display text-2xl font-black uppercase leading-tight tracking-[0.01em] text-foreground sm:text-4xl">
+          Start training with <span className="text-primary">GFV</span> today
+        </h2>
+        <p className="mt-4 text-base text-muted-foreground">
+          Available on web browser, iPhone, and Android.
+        </p>
+        <div className="mt-8 w-full">
+          <StoreButtons />
+        </div>
+      </div>
+    </section>
+  );
+}
