@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -19,19 +19,18 @@ import { NAV_LINKS, SITE_NAME, GFV_WEB_APP_URL } from "@/lib/site";
  * Desktop:  logo (left) · primary nav (center) · Web App CTA (right)
  * Mobile:   logo (left) · menu trigger (right) → Sheet with nav + CTA
  *
- * All visuals come from the centralized GFV design tokens
- * (src/styles.css). No hard-coded colors or radii.
+ * All visuals come from the centralized GFV design tokens (src/styles.css).
  */
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto grid h-16 w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 sm:px-6 md:grid-cols-3">
         {/* Logo / wordmark */}
         <Link
           to="/"
-          className="flex shrink-0 items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="flex min-w-0 shrink-0 items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label={`${SITE_NAME} home`}
         >
           <span
@@ -40,8 +39,8 @@ export function Header() {
           >
             G
           </span>
-          <span className="font-display text-base font-bold tracking-tight text-foreground">
-            {SITE_NAME}
+          <span className="truncate font-display text-sm font-extrabold uppercase tracking-[0.14em] text-foreground sm:text-base">
+            GFV <span className="text-primary">Training</span>
           </span>
         </Link>
 
@@ -51,34 +50,28 @@ export function Header() {
           className="hidden min-w-0 items-center justify-center gap-1 md:flex"
         >
           {NAV_LINKS.map((link) => (
-            <Link
+            <a
               key={link.key}
-              to={link.to}
-              activeProps={{
-                className: "text-foreground",
-              }}
-              inactiveProps={{
-                className: "text-muted-foreground",
-              }}
-              activeOptions={{ exact: link.to === "/" }}
-              className="rounded-sm px-3 py-2 text-sm font-medium transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              href={link.href}
+              className="rounded-sm px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden shrink-0 md:block">
-          <Button asChild size="sm">
+        <div className="hidden shrink-0 justify-end md:flex">
+          <Button asChild size="sm" variant="secondary" className="rounded-pill text-primary">
             <a href={GFV_WEB_APP_URL} target="_blank" rel="noopener noreferrer">
               Open Web App
+              <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="md:hidden">
+        <div className="flex justify-end md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button
@@ -96,7 +89,6 @@ export function Header() {
               side="right"
               className="w-3/4 max-w-xs gap-0 p-0"
             >
-              {/* Visually-hidden title for the dialog (a11y). */}
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="flex h-16 items-center border-b border-border px-4">
                 <span
@@ -105,8 +97,8 @@ export function Header() {
                 >
                   G
                 </span>
-                <span className="ml-2 font-display text-base font-bold tracking-tight text-foreground">
-                  {SITE_NAME}
+                <span className="ml-2 font-display text-sm font-extrabold uppercase tracking-[0.14em] text-foreground">
+                  GFV <span className="text-primary">Training</span>
                 </span>
               </div>
 
@@ -116,19 +108,16 @@ export function Header() {
               >
                 {NAV_LINKS.map((link) => (
                   <SheetClose asChild key={link.key}>
-                    <Link
-                      to={link.to}
-                      activeProps={{ className: "text-foreground bg-accent" }}
-                      inactiveProps={{ className: "text-muted-foreground" }}
-                      activeOptions={{ exact: link.to === "/" }}
+                    <a
+                      href={link.href}
                       className={cn(
-                        "rounded-sm px-3 py-2.5 text-sm font-medium transition-colors",
+                        "rounded-sm px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors",
                         "hover:bg-accent hover:text-foreground",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                       )}
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </SheetClose>
                 ))}
               </nav>
@@ -141,6 +130,7 @@ export function Header() {
                     rel="noopener noreferrer"
                   >
                     Open Web App
+                    <ArrowUpRight aria-hidden="true" />
                   </a>
                 </Button>
               </div>

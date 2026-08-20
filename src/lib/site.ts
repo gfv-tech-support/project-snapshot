@@ -16,9 +16,11 @@ export const SITE_URL = "https://gfvtraining.com";
 
 /**
  * URL of the GFV Web App (the actual product, separate from this site).
- * TODO: replace with the real Web App URL when available.
  */
-export const GFV_WEB_APP_URL = "https://app.gfvtraining.com";
+export const GFV_WEB_APP_URL = "https://web.gfvtraining.com";
+
+/** Service-provider onboarding / login entry point in the web app. */
+export const GFV_PROVIDER_ONBOARDING_URL = "https://web.gfvtraining.com/login";
 
 /**
  * Apple App Store listing for the GFV app.
@@ -34,23 +36,28 @@ export const GOOGLE_PLAY_URL = "https://play.google.com/store/apps/details?id=co
 
 /** A single navigation entry rendered in the header / footer. */
 export interface NavLink {
-  /** Stable key for React lists and active-state matching. */
+  /** Stable key for React lists. */
   readonly key: string;
   /** Accessible label shown to users. */
   readonly label: string;
-  /** TanStack Router `to` target. Must match a route path exactly. */
-  readonly to: string;
+  /** In-page anchor target on the single-page landing site. */
+  readonly href: string;
 }
 
 /**
  * Primary navigation links for the site header.
- * Keep this in sync with the route files under `src/routes/`.
+ * Single-page landing site: each entry scrolls to a section on "/".
  */
 export const NAV_LINKS: readonly NavLink[] = [
-  { key: "home", label: "Home", to: "/" },
-  { key: "about", label: "About", to: "/about" },
-  { key: "coaches", label: "Coaches", to: "/coaches" },
-  { key: "gyms", label: "Gyms", to: "/gyms" },
-  { key: "programs", label: "Programs", to: "/programs" },
-  { key: "exercises", label: "Exercises", to: "/exercises" },
+  { key: "programs", label: "Programs", href: "#programs" },
+  { key: "directory", label: "Gyms & Coaches", href: "#directory" },
+  { key: "business", label: "For Businesses", href: "#business" },
+  { key: "faq", label: "FAQ", href: "#faq" },
+] as const;
+
+/** Footer utility links. */
+export const FOOTER_LINKS: readonly NavLink[] = [
+  { key: "terms", label: "Terms of Service", href: "#terms" },
+  { key: "privacy", label: "Privacy Policy", href: "#privacy" },
+  { key: "support", label: "Support", href: "#support" },
 ] as const;
