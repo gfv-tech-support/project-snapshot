@@ -8,19 +8,19 @@ const PROGRAMS = [
     key: "striking",
     icon: Swords,
     title: "Muay Thai & Striking",
-    body: "8-week structured courses with technical breakdowns, combinations, and sparring exchange craft.",
+    body: "Eight-week courses that break down technique, combinations and the timing you only learn from sparring.",
   },
   {
     key: "strength",
     icon: Dumbbell,
     title: "Strength & Conditioning",
-    body: "Fighter-specific power, endurance circuits, and functional strength built around your fight calendar.",
+    body: "Power and endurance work planned around your fight camp, not a generic gym split.",
   },
   {
     key: "mobility",
     icon: StretchHorizontal,
     title: "Stretching & Mobility",
-    body: "Daily mobility routines, injury prevention work, and post-training recovery sessions.",
+    body: "Short daily routines to stay loose, plus recovery sessions for the day after a hard round.",
   },
 ] as const;
 
@@ -30,8 +30,8 @@ export function Programs() {
     <section id="programs" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
         <SectionHeading
-          eyebrow="What athletes get"
-          title="Everything you need to compete and progress"
+          eyebrow="Training"
+          title="Pick a program, follow it through"
         />
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

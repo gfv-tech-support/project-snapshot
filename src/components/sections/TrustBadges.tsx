@@ -1,9 +1,9 @@
 import { Check } from "lucide-react";
 
 const BADGES = [
-  "Verified business & PT licenses",
-  "Instant cross-device sync (iOS, Android, Web)",
-  "Secure Stripe billing & memberships",
+  "Licences checked by hand",
+  "Your training syncs everywhere, instantly",
+  "Payments handled securely by Stripe",
 ] as const;
 
 /** Horizontal row of platform trust badges. */
