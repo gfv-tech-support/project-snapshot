@@ -24,7 +24,7 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,color-mix(in_oklab,var(--background)_70%,transparent)_0%,transparent_35%,var(--background)_92%)]"
       />
 
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-12 pt-14 text-center sm:px-6 sm:pb-16 sm:pt-20">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-8 pt-14 text-center sm:px-6 sm:pb-10 sm:pt-20">
         <p className="inline-flex items-center gap-2 rounded-pill border border-border bg-card/70 px-4 py-1.5 text-xs text-muted-foreground">
           <span className="size-1.5 rounded-pill bg-primary" aria-hidden="true" />
           Muay Thai, strength and recovery — plus the gyms near you
@@ -35,7 +35,7 @@ export function Hero() {
           <span className="text-primary">tonight?</span>
         </h1>
 
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           GFV keeps your sessions, your gym and your coach in one place. Follow a program,
           book a class, or find a therapist when something starts to hurt.
         </p>
