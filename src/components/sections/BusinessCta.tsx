@@ -28,14 +28,13 @@ export function BusinessCta() {
       <div className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="rounded-lg border border-primary/40 bg-card p-6 text-center sm:p-10">
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-            For gyms, coaches &amp; PTs
+            For gyms, coaches and therapists
           </p>
           <h2 className="mt-3 font-display text-2xl font-black uppercase leading-tight tracking-[0.01em] text-foreground sm:text-3xl">
-            Own a gym or offer coaching? Partner with GFV.
+            Run a gym or coach on the side?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
-            List your facility, manage memberships, or offer private training to dedicated combat
-            athletes.
+            Put your gym on the map, sell memberships, or take private clients — and reach athletes who already train every week.
           </p>
 
           <ul className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:grid-cols-3">

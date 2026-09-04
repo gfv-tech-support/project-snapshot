@@ -34,7 +34,7 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
-        <SectionHeading eyebrow="FAQ" title="Questions, answered" />
+        <SectionHeading eyebrow="FAQ" title="Things people ask us" />
         <Accordion type="single" collapsible className="mt-10 w-full">
           {FAQS.map(({ key, q, a }) => (
             <AccordionItem key={key} value={key}>
