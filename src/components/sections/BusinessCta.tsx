@@ -25,7 +25,7 @@ const BULLETS = [
 export function BusinessCta() {
   return (
     <section id="business" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto w-full max-w-5xl px-4 py-14 sm:px-6 sm:py-24">
         <div className="rounded-lg border border-primary/40 bg-card p-6 text-center sm:p-10">
           <p className="font-display text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
             For gyms, coaches and therapists
